@@ -11,13 +11,13 @@ describe('测试当当网相关数据提取', () => {
             done()
         })
     })
-    it('热销榜获取数据时,传递一个超级大的页数', () => {
-        qdDDBang.getBestSellers((res) => {
+    it('热销榜获取数据时,传递一个超级大的页数', done => {
+        qdDDBang.getBestSellers(res => {
             expect(res.length).to.be.above(1)
             console.log(Table.print(res))
             done()
-        })
-    }, 10000)
+        },10000)
+    })
     it('热销榜总页数必须为数字', done => {
         qdDDBang.getBestSellersPageCount(res => {
             expect(res).to.be.a('number')
@@ -58,5 +58,12 @@ describe('测试当当网相关数据提取', () => {
             console.log(Table.print(data))
             done()
         })
+    })
+    it('获取榜单中的益智游戏分类',done=>{
+        qdDDBang.getBestSellers(res => {
+            expect(res.length).to.be.above(1)
+            console.log(Table.print(res))
+            done()
+        },10000,'益智游戏')
     })
 })
