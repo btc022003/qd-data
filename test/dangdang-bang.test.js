@@ -1,4 +1,5 @@
 var qdDDBang = require('../index').DangDang.Bang
+var qdDDCommon = require('../index').DangDang.Common
 const expect = require('chai').expect
 const Table = require('easy-table')//用于打印输出结果
 
@@ -19,7 +20,7 @@ describe('测试当当网相关数据提取', () => {
     }, 10000)
     it('热销榜总页数必须为数字', done => {
         qdDDBang.getBestSellersPageCount(res => {
-            expect(res).to.be.a.number
+            expect(res).to.be.a('number')
             done()
         })
     })
@@ -51,4 +52,11 @@ describe('测试当当网相关数据提取', () => {
     //         getTemData()
     //     })
     // })
+    it('获取榜单中数据的分类',done=>{
+        qdDDCommon.getBookTypes(data=>{
+            expect(data).to.be.an('array')
+            console.log(Table.print(data))
+            done()
+        })
+    })
 })
