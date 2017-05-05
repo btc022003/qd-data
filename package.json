@@ -5,6 +5,7 @@
   "main": "index.js",
   "repository": "https://github.com/btc022003/qd-data.git",
   "author": "arivin <btc022003@gmail.com>",
+  "keywords": ["crawler","website","api","data","website","spider"],
   "license": "MIT",
   "dependencies": {
     "axios": "^0.16.1",
