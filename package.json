@@ -1,0 +1,16 @@
+{
+  "name": "qd-data",
+  "version": "1.0.0",
+  "description": "crawling data from website by nodejs",
+  "main": "index.js",
+  "repository": "https://github.com/btc022003/qd-data.git",
+  "author": "arivin <btc022003@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.16.1",
+    "chai": "^3.5.0",
+    "cheerio": "^0.22.0",
+    "easy-table": "^1.1.0",
+    "iconv-lite": "^0.4.17"
+  }
+}
