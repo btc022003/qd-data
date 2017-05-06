@@ -13,8 +13,8 @@ npm i qd-data --save
 
 ##### 当当网数据提取
 ```js
-var qdDDBang = require('qd-data').DangDang.Bang
-var qdDDCommon = require('../index').DangDang.Common
+const qdDDBang = require('qd-data').DangDang.Bang
+const qdDDCommon = require('qd-data').DangDang.Common
 /**
 * 获取书热销榜籍数据
 *   参数一 回调函数
@@ -53,5 +53,37 @@ qdDDBang.getBestSellersPageCount(function(pageCount){
 qdDDCommon.getBookTypes(function(types){
     console.log(types) //获取所有的分类数据
 })
+```
+
+##### 东方财富网数据提取
+```js
+var qdEMF = require('qd-data').EastMoney.News
+
+/**
+* 获取要闻精华总页数
+*   参数一 回调函数
+*       返回总页数   数字
+*/
+qdEMF.getPageCount(function(pageCount){
+    console.log(pageCount)//要闻精华总页数
+})
+
+/**
+* 获取要闻精华数据
+*   参数一 回调函数
+*       返回数组
+*       title   标题
+*       img     图片
+*       link    链接
+*   参数二 页码(可选,默认为1)
+*/
+qdEMF.getFinanceNews(function(data){
+    console.log(data)//要闻精华数据
+},1)
+```
+
+Test
+```bash
+mocha #运行测试代码
 ```
 
