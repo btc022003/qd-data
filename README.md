@@ -55,7 +55,7 @@ qdDDCommon.getBookTypes(function(types){
 })
 ```
 
-##### 东方财富网数据提取
+##### 东方财富资讯网数据提取
 ```js
 var qdEMF = require('qd-data').EastMoney.News
 
@@ -80,6 +80,40 @@ qdEMF.getPageCount(function(pageCount){
 qdEMF.getFinanceNews(function(data){
     console.log(data)//要闻精华数据
 },1)
+```
+##### 新浪网股票数据
+```js
+var stockTrade = require('qd-data').Stock.Trade
+/**
+* 获取单只股票的数据
+*   参数一 回调函数
+*       返回数据
+*       code            编码
+*       name            名字
+*       trade           当前价格
+*       high            最高价
+*       low             最低价
+*       volume          成交量
+*       volumePrice     成交价格
+*       settlement      昨日收盘价
+*       open            开盘价
+*       changeMoney     涨跌价格 
+*       changePercent   涨跌幅度
+*   参数二 股票代码
+*/
+stockTrade.getInfoByCode(function(data){
+    console.log(data)
+},'600611')
+
+/**
+* 获取多只股票的数据
+*   参数一 回调函数
+*       返回一个数组
+*   参数二 股票代码(数组形式进行传递)
+*/
+stockTrade.getInfoByCodes(function(data){
+    console.log(data)
+},[['600611','000877','601088']])
 ```
 
 Test
