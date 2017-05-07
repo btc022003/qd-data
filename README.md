@@ -113,7 +113,7 @@ stockTrade.getInfoByCode(function(data){
 */
 stockTrade.getInfoByCodes(function(data){
     console.log(data)
-},[['600611','000877','601088']])
+},['600611','000877','601088'])
 
 /**
 * 获取新浪 财经中的精彩推荐内容
