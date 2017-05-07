@@ -1,6 +1,6 @@
 {
   "name": "qd-data",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "crawling data from website by nodejs",
   "main": "index.js",
   "repository": "https://github.com/btc022003/qd-data.git",
