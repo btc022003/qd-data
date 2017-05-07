@@ -19,4 +19,11 @@ describe('测试stock相关数据',()=>{
             done()
         },['600611','000877','601088'])
     })
+
+    it('获取新浪的资讯数据',done=>{
+        Stock.Trade.getNews(data=>{
+            console.log(Table.print(data))
+            done()
+        })
+    })
 })
