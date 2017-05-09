@@ -123,6 +123,38 @@ stockTrade.getNews(function(data){
 })
 ```
 
+##### 常用数据提取
+```js
+
+var life = require('qd-data').Others.Life
+var music = require('qd-data').Others.Music
+
+/**
+* 根据城市获取天气数据
+*   参数一 回调函数
+*   参数二 查询的城市信息
+*/
+life.getWeatherbyCity(function(data) {
+  console.log(data)
+},'北京')
+
+/**
+* 根据关键字检索网易云音乐中的数据
+*   参数一 回调函数
+*       title       歌单(专辑)名字
+*       a_id        歌单(专辑)id
+*       songs       歌曲数组
+*           name    歌名
+*           url     歌曲链接
+*   参数二 关键字
+*   参数三 获取的数量[可选]
+*/
+music.getSongsSearch(function(data){
+    console.log(data)
+},'遇见',10)
+
+```
+
 Test
 ```bash
 mocha #运行测试代码
